@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <script>
+            l = {
+               1: "black",
+               2: "white",
+               3: "red",
+               4: "green",
+               5: "blue",
+               6: "grey",
+               7: "yellow",
+               8: "orange",
+               9: "violet",
+               10: "brown",
+               11: "rgb(0,255,0)",
+            }
+            a = 1
+            z = "off"
+            setTimeout(
+                function() {
+                    document.getElementById("bg").style.background = "#c6cbd3"
+                    document.getElementById("couleur").innerHTML = " "+l[a].toUpperCase()
+                    document.getElementById("bg").style.color = l[a]
+                },1
+            )
+            function start() {
+                if (z == "off") {
+                    document.getElementById("bg").style.backgroundColor = l[a]
+                    document.body.requestFullscreen()
+                    z = "on"
+                } else {
+                    document.getElementById("bg").style.background = "#c6cbd3"
+                    document.exitFullscreen()
+                    z = "off"
+                }
+            }
+            document.onkeyup=function (e) {
+                e=e || window.event;
+                var code=e.keyCode || e.wihch;
+                if (code) {
+                    if (z != "on") {
+                        a += 1
+                        if (a >= 12) {
+                            a = 1
+                        }
+                        document.getElementById("bg").style.color = l[a]
+                        document.getElementById("couleur").innerHTML = " "+l[a].toUpperCase()
+                    }
+                }
+            }
+        </script>
+        <style>
+            body {
+                cursor: pointer;
+                font-size: 30px;
+                margin: 0;
+            }
+            #bg {
+                height: 100%;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body style="background:#ffffff" onclick="start()">
+        <div id="bg">
+            - Clic sur la page pour ouvrir ou fermer / Ne pas faire echap
+            <br>
+            - Appuis sur une touche pour changer de couleur 
+            <br>
+            - Couleur :<span id="couleur"></span>
+            <br>
+        </div>
+    </body>
+</html>
