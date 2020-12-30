@@ -1,3 +1,3 @@
-[Ecran-Noir](https://oxybo45800.github.io/html/Ecran%20noir.html)
+[Ecran-Noir](https://0xybo.github.io/html/Ecran%20noir.html)
 
-[Textarea](https://oxybo45800.github.io/html/page%20vierge.html)
+[Textarea](https://0xybo.github.io/html/page%20vierge.html)
